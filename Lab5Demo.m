@@ -7,7 +7,7 @@ ecg= val;
 Fs = 100; %Sampling frequency 100Hz
 l =1:1:length(ecg);
 time = l/Fs; %Cycle
-figure ('Name','ECG signal');
+figure ('Name','ECG signal'); %Create a figure
 plot(time,ecg);
 xlabel('Time (second)'); ylabel('Amp. (uV)');
 grid on;
