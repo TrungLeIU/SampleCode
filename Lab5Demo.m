@@ -8,7 +8,7 @@ Fs = 100; %Sampling frequency 100Hz
 l =1:1:length(ecg);
 time = l/Fs; %Cycle
 figure ('Name','ECG signal'); %Create a figure
-plot(time,ecg);
+plot(time,ecg); %Plot the figure
 xlabel('Time (second)'); ylabel('Amp. (uV)');
 grid on;
 %% Fast fourier transform
@@ -16,7 +16,7 @@ grid on;
 figure('Name','Fast Fourier Transform'),
 fecg=fft(ecg);  %Fast fourier transformation
 flength = l/Fs;
-plot(Fs/length(fecg):Fs/length(fecg):Fs,abs(fecg));
+plot(Fs/length(fecg):Fs/length(fecg):Fs,abs(fecg)); %Plot the figure
 xlabel('Freq (Hz)'); ylabel('Gain');
 grid on;
 
@@ -27,7 +27,7 @@ figure('Name','Frequency Response');
 freqz(b,1,512); %Frequency response
 filteredecg= conv(b,ecg); % Filter the signal
 figure ('Name','Filtered ECG'), plot(1/Fs:1/Fs:length(filteredecg)/Fs,filteredecg);
-grid on;xlabel('Time (second)'); 
+grid on;xlabel('Time (second)'); %Grid on
 ylabel('Amp. (uV)');
 figure ('Name','FFT Filtered ECG Signal'),
 plot(Fs/length(filteredecg):Fs/length(filteredecg):Fs,abs(fft(filteredecg)));
