@@ -30,7 +30,7 @@ end
 for i = 1:length(freqsin) 
    freq_scale = freqsin(i) * 2 * pi/fs; 
    x = (1:npts) * freq_scale; 
-   snr_n = 10^(snr(i)/20);		% Convert from db 
+   snr_n = 10^(snr(i)/20);		% Convert from db  to estimate the snr
    A = snr_n * rms_noise * 1.414; % Determine gain for appropriate SNR 
    if i == 1 
      component = sin(x) * A; 
